@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Jest
+  description: Jest is a JavaScript testing framework designed to ensure correctness of any JavaScript codebase
+
+two:
+  name: StoryBook
+  description: An open-source tool for UI development, Storybook is essentially a library or a playground for UI components
