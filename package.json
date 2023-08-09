@@ -9,7 +9,9 @@
   },
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "dev:": "rails server",
-    "migrate:": "rails db:migrate RAILS_ENV=development"
+    "dev": "rails server",
+    "db:migrate": "rails db:migrate RAILS_ENV=development",
+    "db:reset": "rails db:reset",
+    "db:seed": "rails db:seed"
   }
 }

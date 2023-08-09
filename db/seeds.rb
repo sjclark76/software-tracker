@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+Tool.create(name: "Jest", :description => 'blah blah blah')
+Tool.create(name: "StoryBook", :description => 'lorem ipsum blah blah blah')
+

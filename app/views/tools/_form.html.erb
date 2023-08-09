@@ -1,0 +1,18 @@
+<%= form_with(model: @tool, local: true) do |form| %>
+  <% if @tool.errors.any? %>
+    <div class="error-message">
+      <%= @tool.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
+  <div>
+<%= form.label :name %>
+<%= form.text_field :name %>
+  </div>
+
+  <div>
+<%= form.label :description %>
+<%= form.text_area :description %>
+  </div>
+
+<%= form.submit 'Create Tool' %>
+<% end %>

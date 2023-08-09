@@ -1,7 +1,15 @@
-<h1>Tools</h1>
+<main class="container">
+  <div class="header">
+    <h1>Tools</h1>
+    <%= link_to "New Tool", new_tool_path %>
+  </div>
 
-<ul>
-  <% @tools.each do |tool| %>
-    <li><%= tool.name %>: <%= tool.description %></li>
-  <% end %>
-</ul>
+  <%= render @tools %>
+</main>
+
+
+<!--<ul>-->
+  <%# @tools.each do |tool| %>
+<!--    <li><%#= tool.name %>: <%#= tool.description %></li>-->
+  <%# end %>
+<!--</ul>-->
