@@ -10,6 +10,7 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "dev": "rails server",
+    "build:css": "rails tailwindcss:build",
     "db:migrate": "rails db:migrate RAILS_ENV=development",
     "db:reset": "rails db:reset",
     "db:seed": "rails db:seed"
