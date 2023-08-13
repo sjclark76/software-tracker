@@ -1,8 +1,42 @@
 <div class="w-full flex flex-col items-center">
   <h1>Tools</h1>
-  <ul class="divide-y divide-slate-100">
-    <%= render @tools %>
-  </ul>
+
+  <!-- Component: Simple Table -->
+  <div class="w-full overflow-x-auto">
+    <table class="w-full text-left border border-collapse rounded sm:border-separate border-slate-200" cellspacing="0">
+      <tbody>
+        <tr>
+          <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0 stroke-slate-700 text-slate-700 bg-slate-100">Name</th>
+          <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0 stroke-slate-700 text-slate-700 bg-slate-100">Description</th>
+          <th scope="col" colspan="2" class="h-12 px-6 text-sm font-medium border-l first:border-l-0 stroke-slate-700 text-slate-700 bg-slate-100 col"></th>
+
+        </tr>
+
+        <% cell_css = "h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500" %>
+
+        <% @tools.each do |tool| %>
+          <tr>
+
+            <td class="<%= cell_css %>"><%= tool.name %></td>
+            <td class="<%= cell_css %>"><%= tool.description %></td>
+            <td class="<%= cell_css %>"><!-- Component: Base link basic button -->
+              <a href="<%= edit_tool_path(tool) %>" class="inline-flex items-center justify-center h-10 gap-2 px-5 text-sm font-medium tracking-wide transition duration-300 rounded focus-visible:outline-none justify-self-center whitespace-nowrap text-emerald-500 hover:bg-emerald-50 hover:text-emerald-600 focus:bg-emerald-100 focus:text-emerald-700 disabled:cursor-not-allowed disabled:text-emerald-300 disabled:shadow-none disabled:hover:bg-transparent">
+                <span>Edit</span>
+              </a>
+            </td>
+            <td class="<%= cell_css %>">
+              <button class="inline-flex items-center justify-center h-10 gap-2 px-5 text-sm font-medium tracking-wide transition duration-300 rounded focus-visible:outline-none justify-self-center whitespace-nowrap text-emerald-500 hover:bg-emerald-50 hover:text-emerald-600 focus:bg-emerald-100 focus:text-emerald-700 disabled:cursor-not-allowed disabled:text-emerald-300 disabled:shadow-none disabled:hover:bg-transparent">
+                <span>Delete (TODO) </span>
+              </button>
+            </td>
+
+          </tr>
+        <% end %>
+
+      </tbody>
+    </table>
+  </div>
+  <!-- End Simple Table -->
 </div>
 
 

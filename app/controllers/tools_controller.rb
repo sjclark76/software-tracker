@@ -1,5 +1,5 @@
 class ToolsController < ApplicationController
-  before_action :set_quote, only: [:show, :edit, :update, :destroy]
+  before_action :set_tool, only: [:show, :edit, :update, :destroy]
   def index
     @tools = Tool.all
   end
@@ -36,7 +36,7 @@ class ToolsController < ApplicationController
   end
   private
 
-  def set_quote
+  def set_tool
     @tool = Tool.find(params[:id])
   end
 
