@@ -13,26 +13,28 @@ class ToolsController < ApplicationController
 
   def create
     @tool = Tool.new(tool_params)
-
+    @is_create = true
     if @tool.save
-      redirect_to_tools_path, notice = "Tool was successfully created."
+      redirect_to @tools
     else
       render :new
     end
   end
 
   def edit
+    @is_create = false
   end
 
   def update
     if @tool.update(tool_params)
-      redirect_to_tools_path, notice = "Tool was updated created."
+
+      redirect_to tools_url , notice: "Tool was updated successfully."
     end
   end
 
   def destroy
-    @quote.destroy
-    redirect_to_tools_path, notice = "Quote was successfully destroyed."
+    @tool.destroy
+    redirect_to tools_url , notice: "Tool was deleted successfully."
   end
   private
 

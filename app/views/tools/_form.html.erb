@@ -5,14 +5,22 @@
     </div>
   <% end %>
   <div>
-<%= form.label :name %>
-<%= form.text_field :name %>
+
+    <div class="relative my-6">
+      <%= form.text_field :name, class: "text-field peer", placeholder: "Name" %>
+      <%= form.label :name, class: 'text-field-label' %>
+    </div>
+    <div class="relative my-6">
+      <%= form.text_field :description, class: "text-field peer", placeholder: "Description" %>
+      <%= form.label :description, class: 'text-field-label' %>
+    </div>
   </div>
 
   <div>
-<%= form.label :description %>
-<%= form.text_area :description %>
+
   </div>
 
-<%= form.submit 'Create Tool' %>
+  <%= form.submit value: @is_create ? 'Create Tool' : 'Update Tool', class: "btn-primary-lg" %>
+  <%= link_to sanitize("Cancel"), tools_path, class:"btn-secondary-lg" %>
+
 <% end %>
