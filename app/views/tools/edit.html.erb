@@ -1,9 +1,10 @@
-<main class="container">
-  <%= link_to sanitize("&larr; Back to tools"), tools_path(@tool), class:"btn-link" %>
+<div class="w-full flex flex-col items-center">
 
-  <div class="header">
+
+  <div class="title-bar">
+    <%= link_to sanitize("&larr; Back to tools"), tools_path(@tool), class:"btn-link" %>
     <h1>Edit Tool</h1>
   </div>
 
   <%= render "form", tool: @tool %>
-</main>
+</div>

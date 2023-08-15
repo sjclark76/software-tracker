@@ -22,10 +22,10 @@
           <a role="menuitem" aria-haspopup="false" tabindex="0"  href="javascript:void(0)"> <span>Home</span></a>
         </li>
         <li role="none" class="flex items-stretch">
-          <a class="<%= 'active' if current_page?(controller: 'tools') %>" role="menuitem" aria-current="page" aria-haspopup="false" tabindex="0"  href="<% tools_path %>"> <span>Tools</span> </a>
+          <a class="<%= 'active' if current_page?(controller: 'tools') %>" role="menuitem" aria-current="page" aria-haspopup="false" tabindex="0"  href="<%= tools_path %>"> <span>Tools</span> </a>
         </li>
         <li role="none" class="flex items-stretch">
-          <a role="menuitem" aria-haspopup="false" tabindex="0" href="javascript:void(0)"> <span>Users</span> </a>
+          <a class="<%= 'active' if current_page?(controller: 'users') %>" role="menuitem" aria-haspopup="false" tabindex="0" href="<%= users_path %>"> <span>Users</span> </a>
         </li>
       </ul>
     </nav>

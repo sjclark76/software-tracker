@@ -1,0 +1,26 @@
+<%= form_with(model: @user, local: true) do |form| %>
+  <% if @user.errors.any? %>
+    <div class="error-message">
+      <%= @user.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
+  <div>
+
+    <div class="relative my-6">
+      <%= form.text_field :first_name, class: "text-field peer", placeholder: "First Name" %>
+      <%= form.label :first_name, class: 'text-field-label' %>
+    </div>
+    <div class="relative my-6">
+      <%= form.text_field :last_name, class: "text-field peer", placeholder: "Last Name" %>
+      <%= form.label :last_name, class: 'text-field-label' %>
+    </div>
+  </div>
+
+  <div>
+
+  </div>
+
+  <%= form.submit value: @is_create ? 'Create User' : 'Update User', class: "btn-primary-lg" %>
+  <%= link_to sanitize("Cancel"), users_path, class:"btn-secondary-lg" %>
+
+<% end %>

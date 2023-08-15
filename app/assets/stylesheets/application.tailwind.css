@@ -44,6 +44,13 @@
   nav a.active {
     @apply text-emerald-500
   }
+
+  /**
+    Random
+   */
+  .title-bar {
+    @apply w-1/2 flex flex-row justify-between content-center
+  }
 }
 
 
