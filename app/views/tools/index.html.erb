@@ -1,37 +1,8 @@
-
-<div class="w-full flex flex-col items-center">
   <h1>Tools</h1>
-  <!-- Component: Simple Table -->
-  <div class="w-full overflow-x-auto mt-10">
-    <table class="w-full text-left border border-collapse rounded sm:border-separate border-slate-200" cellspacing="0">
-      <tbody>
-      <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Description</th>
-        <th scope="col" colspan="2"></th>
-      </tr>
-      <% @tools.each do |tool| %>
-        <tr>
-
-          <td><%= tool.name %></td>
-          <td><%= tool.description %></td>
-          <td><!-- Component: Base link basic button -->
-            <a href="<%= edit_tool_path(tool) %>" class="btn-link">
-              <span>Edit</span>
-            </a>
-          </td>
-          <td>
-            <%= button_to "Delete", tool_path(tool), method: :delete, class: "btn-link" %>
-          </td>
-
-        </tr>
-      <% end %>
-
-      </tbody>
-    </table>
+   <%= render 'tools' , tools: @tools %>
+  <div class="mt-10">
+    <%= link_to "New Tool", new_tool_path, class: "btn-primary-lg" %>
   </div>
-  <!-- End Simple Table -->
-</div>
 
 
 

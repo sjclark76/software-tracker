@@ -1,4 +1,4 @@
-<%= link_to sanitize("&larr; Back to tools"), tools_path %>
+<%= link_to sanitize("&larr; Back to tools"), tools_path , class: 'btn-link'%>
 <h1>New Tool</h1>
 
-<%= render "form", quote: @quote %>
+<%= render "tool", tool: @tool, read_only: false %>

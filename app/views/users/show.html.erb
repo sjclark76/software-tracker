@@ -1,0 +1,8 @@
+<section>
+  <%= link_to sanitize("&larr; Back to users"), tools_path(@user), class: "btn-link" %>
+  <%= link_to sanitize("Edit"), edit_user_path(@user), class: "btn-primary-md" %>
+  <h1>View User</h1>
+</section>
+
+<%= render "user", user: @user, read_only: true %>
+

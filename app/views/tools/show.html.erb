@@ -1,7 +1,8 @@
-<%= link_to sanitize("&larr; Back to tools"), tools_path %>
-<div class="header">
-  <h1>
-    <%= @tool.name %>
-  </h1>
-  <div><%=@tool.description %></div>
-</div>
+<section>
+  <%= link_to sanitize("&larr; Back to tools"), tools_path(@tool), class: "btn-link" %>
+  <%= link_to sanitize("Edit"), edit_tool_path(@tool), class: "btn-primary-md" %>
+  <h1>View Tool</h1>
+</section>
+
+<%= render "tool", tool: @tool, read_only: true %>
+

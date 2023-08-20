@@ -40,6 +40,7 @@ class ToolsController < ApplicationController
 
   def set_tool
     @tool = Tool.find(params[:id])
+    puts @tool.users.inspect
   end
 
   def tool_params

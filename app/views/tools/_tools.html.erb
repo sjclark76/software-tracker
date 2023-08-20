@@ -1,0 +1,30 @@
+<div class="w-full overflow-x-auto mt-10">
+  <table class="w-full text-left border border-collapse rounded sm:border-separate border-slate-200" cellspacing="0">
+    <tbody>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Users</th>
+      <th scope="col" colspan="2"></th>
+    </tr>
+    <% tools.each do |tool| %>
+      <tr>
+
+        <td><%= link_to sanitize(tool.name), tool_path(tool) , class: "btn-link" %></td>
+        <td><%= tool.description %></td>
+        <td><%= tool.users.count %></td>
+        <td><!-- Component: Base link basic button -->
+          <a href="<%= edit_tool_path(tool) %>" class="btn-link">
+            <span>Edit</span>
+          </a>
+        </td>
+        <td>
+          <%= button_to "Delete", tool_path(tool), method: :delete, class: "btn-link" %>
+        </td>
+
+      </tr>
+    <% end %>
+
+    </tbody>
+  </table>
+</div>

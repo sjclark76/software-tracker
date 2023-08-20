@@ -1,42 +1,11 @@
+ <h1>Users</h1>
 
-<div class="w-full flex flex-col items-center">
-  <div class="title-bar">
-    <%= link_to "New User", new_user_path, class: "btn-primary-lg" %>
-    <h1>Users</h1>
-  </div>
-  <!-- Component: Simple Table -->
-  <div class="w-full overflow-x-auto mt-10">
-    <table class="w-full text-left border border-collapse rounded sm:border-separate border-slate-200" cellspacing="0">
-      <tbody>
-      <tr>
-        <th scope="col">First Name</th>
-        <th scope="col">Last Name</th>
-        <th scope="col" colspan="2"></th>
-      </tr>
-      <% @users.each do |user| %>
-        <tr>
+ <%= render 'users', users: @users %>
 
-          <td><%= user.first_name %></td>
-          <td><%= user.last_name %></td>
-          <td><!-- Component: Base link basic button -->
-            <a href="<%= edit_user_path(user) %>" class="btn-link">
-              <span>Edit</span>
-            </a>
-          </td>
-          <td>
-            <%= button_to "Delete", user_path(user), method: :delete, class: "btn-link" %>
-          </td>
+ <div class="mt-10">
+   <%= link_to "New User", new_user_path, class: "btn-primary-lg" %>
+ </div>
 
-        </tr>
-      <% end %>
-
-      </tbody>
-    </table>
-  </div>
-  <!-- End Simple Table -->
-
-
-</div>
 
 
 

@@ -1,7 +1,7 @@
-<div class="w-full flex flex-col items-center">
-  <div class="title-bar">
-    <%= link_to sanitize("&larr; Back to users"), users_path(@user), class:"btn-link" %>
-    <h1>Edit User</h1>
-  </div>
-  <%= render "user", user: @user %>
-</div>
+<section>
+  <%= link_to sanitize("&larr; Back to users"), users_path(@user), class:"btn-link" %>
+  <h1>Edit User</h1>
+</section>
+
+<%= render "user", user: @user, read_only:false%>
+

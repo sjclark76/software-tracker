@@ -7,11 +7,11 @@
   <div>
 
     <div class="relative my-6">
-      <%= form.text_field :first_name, class: "text-field peer", placeholder: "First Name" %>
+      <%= form.text_field :first_name, class: "text-field peer", placeholder: "First Name", disabled: read_only %>
       <%= form.label :first_name, class: 'text-field-label' %>
     </div>
     <div class="relative my-6">
-      <%= form.text_field :last_name, class: "text-field peer", placeholder: "Last Name" %>
+      <%= form.text_field :last_name, class: "text-field peer", placeholder: "Last Name", disabled: read_only %>
       <%= form.label :last_name, class: 'text-field-label' %>
     </div>
   </div>
@@ -20,7 +20,8 @@
 
   </div>
 
+  <% if read_only == false %>
   <%= form.submit value: @is_create ? 'Create User' : 'Update User', class: "btn-primary-lg" %>
   <%= link_to sanitize("Cancel"), users_path, class:"btn-secondary-lg" %>
-
+<% end %>
 <% end %>

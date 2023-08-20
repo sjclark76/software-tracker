@@ -1,10 +1,6 @@
-<div class="w-full flex flex-col items-center">
+<section>
+  <%= link_to sanitize("&larr; Back to tools"), tools_path(@tool), class:"btn-link" %>
+  <h1>Edit Tool</h1>
+</section>
 
-
-  <div class="title-bar">
-    <%= link_to sanitize("&larr; Back to tools"), tools_path(@tool), class:"btn-link" %>
-    <h1>Edit Tool</h1>
-  </div>
-
-  <%= render "form", tool: @tool %>
-</div>
+<%= render "tool", tool: @tool, read_only:false %>

@@ -6,6 +6,17 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-Tool.create(name: "Jest", :description => 'blah blah blah')
-Tool.create(name: "StoryBook", :description => 'lorem ipsum blah blah blah')
+users = User.create([{ first_name: 'Donald', last_name: 'Trump' },
+                     { first_name: 'Stuart', last_name: 'Clark' },
+                     { first_name: 'Ueli', last_name: 'Steck' }])
+
+
+tools = Tool.create([{name: "Jest", :description => 'blah blah blah'} ,
+                     {name: "StoryBook", :description => 'lorem ipsum blah blah blah'}])
+
+puts users[0].inspect
+ToolUser.create([
+                  {tool_id: tools[0].id, user_id: users[0].id}
+                ] )
+
 
