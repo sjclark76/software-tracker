@@ -21,6 +21,11 @@
     <%= render 'users/users_read_only', users: @tool.users %>
   </div>
 
+  <div class="mb-10">
+    <%= render 'users/users_read_only', users: @unassigned_users %>
+  </div>
+
+  <%= render "shared/dropdown" %>
   <% if read_only == false %>
     <%= form.submit value: @is_create ? 'Create Tool' : 'Update Tool', class: "btn-primary-lg" %>
     <%= link_to sanitize("Cancel"), tools_path, class: "btn-secondary-lg" %>

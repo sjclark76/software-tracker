@@ -23,6 +23,9 @@ class ToolsController < ApplicationController
 
   def edit
     @is_create = false
+
+    @unassigned_users = User.joins("LEFT JOIN tool_users ON users.id = tool_users.user_id")
+                            .where("tool_users.tool_id IS NULL OR tool_users.tool_id != ?", @tool.id)
   end
 
   def update
