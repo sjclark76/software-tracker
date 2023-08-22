@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_15_005937) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_22_205150) do
   create_table "tool_users", force: :cascade do |t|
     t.integer "tool_id", null: false
     t.integer "user_id", null: false
@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_15_005937) do
   end
 
   create_table "tools", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

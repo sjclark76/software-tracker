@@ -10,7 +10,7 @@
       </tr>
       <% users.each do |user| %>
         <tr>
-          <td><%= user.first_name %> <%= user.last_name %> </td>
+          <td><%= user.full_name %></td>
           <td><%= button_to '+ Add User', add_user_tool_path(tool, user_id: user.id), method: :post, class:'btn-link' %></td>
         </tr>
       <% end %>

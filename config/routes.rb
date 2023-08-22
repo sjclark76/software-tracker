@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'search', to: 'search#index'
   get 'home/index'
   resources :tools , only: [:destroy, :index, :edit, :update, :show, :new, :create ] do
   post 'add_user', on: :member
@@ -10,4 +11,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
    root "home#index"
+
 end
