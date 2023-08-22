@@ -12,11 +12,12 @@ users = User.create([{ first_name: 'Donald', last_name: 'Trump' },
 
 
 tools = Tool.create([{name: "Jest", :description => 'blah blah blah'} ,
-                     {name: "StoryBook", :description => 'lorem ipsum blah blah blah'}])
+                     {name: "StoryBook", :description => 'lorem ipsum blah blah blah'},
+                     {name: "React", :description => 'lorem ipsum blah blah blah'}])
 
 puts users[0].inspect
-ToolUser.create([
-                  {tool_id: tools[0].id, user_id: users[0].id}
-                ] )
+# ToolUser.create([
+#                   {tool_id: tools[0].id, user_id: users[0].id}
+#                 ] )
 
 

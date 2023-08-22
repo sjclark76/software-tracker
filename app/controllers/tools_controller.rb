@@ -1,5 +1,5 @@
 class ToolsController < ApplicationController
-  before_action :set_tool, only: [:show, :edit, :update, :destroy]
+  before_action :set_tool, only: [:show, :edit, :update, :destroy, :add_user, :remove_user]
   def index
     @tools = Tool.all
   end
@@ -39,6 +39,23 @@ class ToolsController < ApplicationController
     @tool.destroy
     redirect_to tools_url , notice: "Tool was deleted successfully."
   end
+
+  def add_user
+    @user = User.find(params[:user_id])
+    ToolUser.create([
+                      {tool_id: @tool.id, user_id: @user.id}
+                    ] )
+    redirect_to edit_tool_path, notice: "User was added successfully."
+  end
+
+  def remove_user
+    puts 'hitting endpoint'
+    @user = User.find(params[:user_id])
+    toolUser = ToolUser.find_by(tool_id: @tool.id, user_id: @user.id)
+    ToolUser.destroy(toolUser.id)
+    redirect_to edit_tool_path, notice: "User was removed successfully."
+  end
+
   private
 
   def set_tool

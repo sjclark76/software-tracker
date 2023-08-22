@@ -1,0 +1,20 @@
+<% if users.length > 0 %>
+  <h2>Assigned Users</h2>
+<div class="w-full overflow-x-auto mt-10">
+  <table class="w-full text-left border border-collapse rounded sm:border-separate border-slate-200" cellspacing="0">
+    <tbody>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col"></th>
+    </tr>
+    <% users.each do |user| %>
+      <tr>
+        <td><%= user.first_name %> <%= user.last_name %></td>
+        <td><%= button_to '- Remove User', remove_user_tool_path(tool, user_id: user.id), method: :post, class:'btn-link' %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+<% end %>

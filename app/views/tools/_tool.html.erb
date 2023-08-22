@@ -17,19 +17,28 @@
     </div>
   </div>
 
-  <div class="mb-10">
-    <%= render 'users/users_read_only', users: @tool.users %>
-  </div>
 
-  <div class="mb-10">
-    <%= render 'users/users_read_only', users: @unassigned_users %>
-  </div>
 
-  <%= render "shared/dropdown" %>
   <% if read_only == false %>
-    <%= form.submit value: @is_create ? 'Create Tool' : 'Update Tool', class: "btn-primary-lg" %>
-    <%= link_to sanitize("Cancel"), tools_path, class: "btn-secondary-lg" %>
+    <div class="mt-10">
+      <%= form.submit value: @is_create ? 'Create Tool' : 'Update Tool', class: "btn-primary-lg" %>
+      <%= link_to sanitize("Cancel"), tools_path, class: "btn-secondary-lg" %>
+    </div>
+
   <% end %>
 
 
+<% end %>
+
+<section class="mt-10">
+
+  <%= render 'tools/assigned_user_table', tool: @tool,  users: @tool.users %>
+</section>
+
+
+
+<% if read_only == false %>
+  <section class="mt-10">
+    <%= render 'tools/unassigned_user_table', tool: @tool, users: @unassigned_users %>
+  </section>
 <% end %>
