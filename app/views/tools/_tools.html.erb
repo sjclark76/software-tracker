@@ -1,24 +1,24 @@
-<div class="w-full overflow-x-auto mt-10">
-  <table class="w-full text-left border border-collapse rounded sm:border-separate border-slate-200" cellspacing="0">
+<div class="w-3/4 overflow-x-auto mt-10">
+  <table class="table-fixed w-full text-left border border-collapse rounded sm:border-separate border-slate-200" cellspacing="0">
     <tbody>
     <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Description</th>
-      <th scope="col">Users</th>
+      <th colspan="2" scope="col" >Name</th>
+      <th colspan="5" scope="col">Description</th>
+      <th colspan="1" scope="col">Users</th>
       <th scope="col" colspan="2"></th>
     </tr>
     <% tools.each do |tool| %>
       <tr>
 
-        <td><%= link_to sanitize(tool.name), tool_path(tool) , class: "btn-link" %></td>
-        <td><%= tool.description %></td>
-        <td><%= tool.users.count %></td>
-        <td><!-- Component: Base link basic button -->
+        <td colspan="2" ><%= link_to sanitize(tool.name), tool_path(tool) , class: "btn-link" %></td>
+        <td colspan="5" class="truncate" > <%= tool.description %> </td>
+        <td colspan="1"><%= tool.users.count %></td>
+        <td colspan="1"><!-- Component: Base link basic button -->
           <a href="<%= edit_tool_path(tool) %>" class="btn-link">
             <span>Edit</span>
           </a>
         </td>
-        <td>
+        <td colspan="1">
           <%= button_to "Delete", tool_path(tool), method: :delete, class: "btn-link" %>
         </td>
 

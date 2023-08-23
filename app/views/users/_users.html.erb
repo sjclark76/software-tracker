@@ -1,14 +1,14 @@
 <div class="w-full overflow-x-auto mt-10">
-  <table class="w-full text-left border border-collapse rounded sm:border-separate border-slate-200" cellspacing="0">
+  <table class="table-fixed w-3/4 text-left border border-collapse rounded sm:border-separate border-slate-200" cellspacing="0">
     <tbody>
     <tr>
-      <th scope="col">Name</th>
-      <th scope="col" colspan="2"></th>
+      <th colspan="8" scope="col">Name</th>
+      <th colspan="2" scope="col" ></th>
     </tr>
     <% users.each do |user| %>
       <tr>
-        <td><%= link_to "#{user.full_name}", user_path(user), class: "btn-link" %></td>
-        <td>
+        <td colspan="8"><%= link_to "#{user.full_name}", user_path(user), class: "btn-link" %></td>
+        <td >
           <a href="<%= edit_user_path(user) %>" class="btn-link">
             <span>Edit</span>
           </a>

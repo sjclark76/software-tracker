@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'search', to: 'search#index'
+  get 'search/results', to: 'search#results'
   get 'home/index'
   resources :tools , only: [:destroy, :index, :edit, :update, :show, :new, :create ] do
   post 'add_user', on: :member

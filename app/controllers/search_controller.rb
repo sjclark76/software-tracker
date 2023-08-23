@@ -1,5 +1,8 @@
 class SearchController < ApplicationController
   def index
+  end
+
+  def results
     unless params[:q].present?
       render json: { error: 'q is required' }, status: :bad_request
       return
