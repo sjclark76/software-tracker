@@ -1,8 +1,8 @@
-<% if users.length > 0 %>
+<% if users.present? && users.length > 0 %>
   <h2>Unassigned Users</h2>
 
-  <div class="w-full overflow-x-auto mt-10">
-    <table class="w-full text-left border border-collapse rounded sm:border-separate border-slate-200" cellspacing="0">
+  <div class="mt-10">
+    <table class="table-auto text-left border border-collapse rounded sm:border-separate border-slate-200" cellspacing="0">
       <tbody>
       <tr>
         <th scope="col">Name</th>

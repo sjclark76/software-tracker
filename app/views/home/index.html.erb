@@ -1,4 +1,49 @@
-<div>
-  <h1 class="font-bold text-4xl">Home#index</h1>
-  <p>Find me in app/views/home/index.html.erb</p>
+
+<div x-data="searchForm()">
+<!--  <form @submit.prevent="submit">-->
+    <input  type="text" x-model="q" @keyup="submit" placeholder="Search...">
+    <button class="btn-primary-md" @click="clear()">clear</button>
+<!--  </form>-->
+
+  <ul class="divide-y divide-slate-100">
+    <template x-for="result in results" >
+      <li class="flex items-start gap-4 px-4 py-3">
+        <a class="flex flex-col gap-0 min-h-[2rem] items-start justify-center w-full" :href="result.path">
+          <h4 class="text-base text-slate-700" x-text="result.display_field"></h4>
+          <p class="w-full text-sm truncate text-slate-500" x-html="highlight(result.search_field, q)"></p>
+        </a>
+      </li>
+    </template>
+  </ul>
 </div>
+
+<script>
+    function searchForm() {
+        return {
+            q: '',
+            results: [],
+            submit() {
+                fetch(`/search?q=${this.q}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        this.results = data;
+                    });
+            },
+            highlight(text, query) {
+                const index = text.toLowerCase().indexOf(query.toLowerCase());
+                if (index === -1) {
+                    return text;
+                }
+                const before = text.slice(0, index);
+                const match = text.slice(index, index + query.length);
+                const after = text.slice(index + query.length);
+                return `${before}<strong>${match}</strong>${after}`;
+            },
+            clear(){
+                this.q = ''
+                this.results = []
+            }
+
+        }
+    }
+</script>
