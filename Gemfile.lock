@@ -179,8 +179,6 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.6.3-x86_64-darwin)
-    stimulus-rails (1.2.1)
-      railties (>= 6.0.0)
     tailwindcss-rails (2.0.30-x86_64-darwin)
       railties (>= 6.0.0)
     thor (1.2.2)
@@ -222,7 +220,6 @@ DEPENDENCIES
   selenium-webdriver
   sprockets-rails
   sqlite3 (~> 1.4)
-  stimulus-rails
   tailwindcss-rails (~> 2.0)
   turbo-rails
   tzinfo-data

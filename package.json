@@ -2,7 +2,6 @@
   "name": "app",
   "private": "true",
   "dependencies": {
-    "@hotwired/stimulus": "^3.2.1",
     "@hotwired/turbo-rails": "^7.3.0",
     "alpinejs": "^3.12.3",
     "webpack": "^5.88.2",
@@ -14,7 +13,9 @@
     "build:css": "rails tailwindcss:build",
     "build:javascript": "rails javascript:build",
     "db:migrate": "rails db:migrate RAILS_ENV=development",
-    "db:reset": "rails db:reset",
+    "db:migrate:test": "rails db:migrate RAILS_ENV=test",
+    "db:reset:dev": "rails db:reset RAILS_ENV=development",
+    "db:reset:test": "rails db:reset RAILS_ENV=test",
     "db:seed": "rails db:seed"
   }
 }
